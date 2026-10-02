@@ -1,0 +1,39 @@
+group = "app.bivak.android_queries"
+version = "1.0"
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        // Misma versión que usa la app de FlutterFlow (android/settings.gradle).
+        classpath("com.android.tools.build:gradle:8.9.1")
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+apply plugin: "com.android.library"
+
+android {
+    namespace = "app.bivak.android_queries"
+
+    compileSdk = 36
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    defaultConfig {
+        // Debe ser <= minSdk de la app (23), o el merge del manifiesto falla.
+        minSdk = 21
+    }
+}

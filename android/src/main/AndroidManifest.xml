@@ -1,0 +1,14 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--
+      Visibilidad de paquetes (Android 11 / API 30 o más): sin esto,
+      SpeechRecognizer.isRecognitionAvailable() da false y la conexión al
+      servicio de reconocimiento puede quedar bloqueada, así que speech_to_text
+      responde "recognizerNotAvailable".
+      Gradle fusiona este bloque dentro del <manifest> de la app.
+    -->
+    <queries>
+        <intent>
+            <action android:name="android.speech.RecognitionService" />
+        </intent>
+    </queries>
+</manifest>

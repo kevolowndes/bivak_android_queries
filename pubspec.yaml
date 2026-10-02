@@ -1,0 +1,23 @@
+name: bivak_android_queries
+description: >-
+  Plugin solo-Android sin código Dart. Su AndroidManifest declara
+  <queries> para android.speech.RecognitionService, que Android fusiona en la
+  app, para que speech_to_text vea el reconocedor de voz con targetSdk 30 o más.
+version: 1.0.0
+publish_to: none
+repository: https://github.com/kevolowndes/bivak_android_queries
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.3.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: app.bivak.android_queries
+        pluginClass: BivakAndroidQueriesPlugin
